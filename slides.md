@@ -1,383 +1,234 @@
 ---
-# try also 'default' to start simple
 theme: seriph
-# random image from a curated Unsplash collection by Anthony
-# like them? see https://unsplash.com/collections/94734566/slidev
-background: https://source.unsplash.com/collection/94734566/1920x1080
-# apply any windi css classes to the current slide
-class: 'text-center'
-# https://sli.dev/custom/highlighters.html
 highlighter: shiki
-# show line numbers in code blocks
 lineNumbers: false
-# some information about the slides, markdown enabled
 info: |
-  ## Slidev Starter Template
-  Presentation slides for developers.
-
-  Learn more at [Sli.dev](https://sli.dev)
-# persist drawings in exports and build
+  ## An auction model for the course enrolling process in CUHK-Shenzhen
 drawings:
   persist: false
+layout: cover
+background: ./assets/loading.jpg
 ---
 
-# Welcome to Slidev
+<h1 class="pri-title"> Course Enrollment </h1>
 
-Presentation slides for developers
+<h1 class="sec-title"> ── A Smarter Way </h1>
 
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
+<p class="thi-title">An auction model for the course enrolling process in CUHK-Shenzhen</p>
+
+<div class="abs-bl mx-14 my-12 flex">
+  <div class="ml-3 flex flex-col text-left">
+    <div><b>GROUP 2</b> Song Chen, Zefeng Song, Siwei Zhang</div>
+    <div class="text-sm opacity-50">May 7th, 2022</div>
+  </div>
 </div>
-
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub"
-    class="text-xl icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
-
----
-
-# What is Slidev?
-
-Slidev is a slides maker and presenter designed for developers, consist of the following features
-
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
-
-<br>
-<br>
-
-Read more about [Why Slidev?](https://sli.dev/guide/why)
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
 
 <style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
+.pri-title {
+  margin-right: 240px;
+}
+.sec-title {
+  margin-left: 240px;
+}
+.thi-title {
+  opacity: 0.7;
+  font-size: 1.2rem;
 }
 </style>
 
 ---
 
-# Navigation
+# Problems
 
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
+The current course registration model in CUHK(SZ) exists many problems.
 
-### Keyboard Shortcuts
+- <OouiNetworkOff class="ib" /> **Laggy course enrolling system** - Single threaded server written in COBOL. 
+- <MdiScaleUnbalanced class="ib" /> **Unfair enrolling method** - Result mainly depends on response time and network delay.
+- <FadRandom1dice class="ib" /> **Random behaviour** - Unstable operation of the system outside standard usage.
 
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
+<br>
 
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
+<v-click>
 
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
+# Our model's features
 
-# Code
+- <IcBaselineAutoAwesome class="ib" /> **No need to register courses concurrently** - Result is based on an auction. Say goodbye to get up early.
+- <IcBaselineAutoAwesome class="ib" /> **No stress** - Even a raspberry pi <SimpleIconsRaspberrypi class="ib"/> can handle the registration process (in theory).
+- <IcBaselineAutoAwesome class="ib" /> **Express student's willingness** - Quantify your demand using willingness points.
+- <IcBaselineAutoAwesome class="ib" /> And even more...
 
-Use code snippets and get the highlighting directly![^1]
-
-```ts {all|2|1-6|9|all}
-interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
-}
-
-function updateUser(id: number, update: User) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
-}
-```
-
-<arrow v-click="3" x1="400" y1="420" x2="230" y2="330" color="#564" width="3" arrowSize="1" />
-
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
+</v-click>
 
 <style>
-.footnotes-sep {
-  @apply mt-20 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
+.ib {
+  display: inline-block;
 }
 </style>
 
 ---
 
-# Components
+# Simple model
 
-<div grid="~ cols-2 gap-4">
+We will show you a simplified model first.
+
+We will assume that for all courses, the students' willingness points weighs the same. 
+
+And the more willingness points posts to the course, the higher rank you will get.
+
+In the simplified model, we will give 100 willingness points to each students.
+
+<div class="flex justify-center">
+
 <div>
 
-You can use Vue components directly inside your slides.
+minimize $p$
 
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
+subject to $RANK(p) \leq \text{Course Quota}$
 
-```html
-<Counter :count="10" />
-```
-
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
-
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="-t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true">
+variables p
 
 </div>
 
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
-
----
-preload: false
----
-
-# Animations
-
-Animations are powered by [@vueuse/motion](https://motion.vueuse.org/).
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
 </div>
 
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
+**Condition** - Assume that **25 students** will register **5 courses** with each **19 quota** (Not enough).
+
+**Restriction** - The **maximum number of course** allowed to register is **4** due to the restriction of credit unit.
+
+**Target** - And each students should try to **maximize the course number** that they need to successfully register.
+
+---
+
+# Assume you are a student among them...
+
+What will you choose?
+
+> Assume that 25 students will register 5 courses with each 19 quota.
+
+| Course    | A    | B    | C    | D    | E    |
+| ------    | ---- | ---- | ---- | ---- | ---- |
+| You       | 10   | 10   | 10   | 10   | 10   |
+| 5 student | 0    | 25   | 25   | 25   | 25   |
+| 5 student | 25   | 0    | 25   | 25   | 25   |
+| 5 student | 25   | 25   | 0    | 25   | 25   |
+| 5 student | 25   | 25   | 25   | 0    | 25   |
+| 4 student | 25   | 25   | 25   | 25   | 0    |
+
+<v-click>
+
+Hence, we should distribute the willingness points to 4 courses rather than 5 or more courses, otherwise, we will lose all the courses.
+
+</v-click>
+
+---
+
+# Assume you are a student among them...
+
+> Assume that 25 students will register 5 courses with each 19 quota.
+
+| Course    | A    | B    | C    | D    | E    |
+| --------- | ---- | ---- | ---- | ---- | ---- |
+| You       | 26   | 26   | 24   | 24   | 0    |
+| 5 student | 0    | 25   | 25   | 25   | 25   |
+| 5 student | 25   | 0    | 25   | 25   | 25   |
+| 5 student | 25   | 25   | 0    | 25   | 25   |
+| 5 student | 25   | 25   | 25   | 0    | 25   |
+| 4 student | 25   | 25   | 25   | 25   | 0    |
+
+<v-click>
+
+We will definately lose C and D if we choose to increase the points in A and B.
+
+Hence, the optimized solution is to distribute the points evenly to 4 courses.
+
+</v-click>
+
+---
+
+# Weighted model
+
+As we have different types of students, and different types of courses, simplified model may not perfectly meet our needs.
+
+And for simplicity, we only consider major required, major elective, free elective three types of courses. University core is much more complicated, which will be clarified in the report.
+
+|        | Major Required | Major Elective | Free Elective |
+| ------ | -------------- | -------------- | ------------- |
+| Weight | 1.9            | 1.5            | 1             |
+
+<p class="magrin-bottom-0">A course can either be major required or major elective, or even free elective to different students.</p>
+
+<p class="magrin-top-0">By common sense, the quota will larger than the sum of major required and major elective students number.</p>
+
+|                                     | Major Required | Major Elective | Free Elective |
+| ----------------------------------- | -------------- | -------------- | ------------- |
+| Points needed to ensure (in theory) | 14             | 17             | 25            |
+
+<p class="magrin-top-0">And the spare points can be posts to other courses that students willing to take, which means it gives chances to student to post more than 4 courses.</p>
+
+<style>
+.magrin-top-0 {
+  margin-top: 0;
 }
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
+.magrin-bottom-0 {
+  margin-bottom: 0;
+}
+</style>
 
 ---
 
-# LaTeX
+# How the system works
 
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
+>   Priority:
+>   1. For different type of courses: Major Required > Major Elective > Free Elective
+>   2. For the same type of courses: According to the willingness points posted.
+>   3. All the same: Choose randomly.
 
-<br>
+Steps
 
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$
-\begin{array}{c}
-
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
+1. Students posts their willingness points to the courses.
+2. Generate a ranked queue for each course
+3. If some students will register more than 4 courses, kick it out of the course queue which course has a less priority to the student.
+4. If the student with the same rank exceeds the quota, choose between them according to the priority.
 
 ---
 
-# Diagrams
+# How the system works
 
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
+Reference implementation
 
-<div class="grid grid-cols-3 gap-10 pt-4 -mb-6">
-
-```mermaid {scale: 0.5}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
+```sql
+INSERT INTO ENROLLMENT (STU_ID, COURSE_ID, POINTS) VALUE (?, ?, ?);
 ```
 
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
+```sql
+CREATE VIEW RANKED_ENROLLMENT AS
+SELECT ENROLLMENT.STU_ID, ENROLLMENT.COURSE_ID, COURSE_TYPE.CTYPE_ID, ENROLLMENT.POINTS, 
+(ENROLLMENT.POINTS * COURSE_TYPE.WEIGHT) AS WEIGHTED_POINT 
+FROM ENROLLMENT 
+INNER JOIN STU_INFO ON ENROLLMENT.STU_ID = STU_INFO.STU_ID
+INNER JOIN COURSE_TYPE ON STU_INFO.MAJOR_ID = COURSE_TYPE.MAJOR_ID AND ENROLLMENT.COURSE_ID = COURSE_TYPE.COURSE_ID
+WHERE ENROLLMENT.COURSE_ID = ?
+ORDER BY WEIGHTED_POINT DESC, COURSE_TYPE.CTYPE_ID DESC, ENROLLMENT.POINTS DESC;
 ```
 
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
+```sql
+SELECT STU_ID, COURSE_ID, CTYPE_ID, POINTS, WEIGHTED_POINT 
+FROM RANKED_ENROLLMENT WHERE COURSE_ID = ? LIMIT ?;
+```
+```sql
+DELETE FROM RANKED_ENROLLMENT WHERE STU_ID =? AND COURSE_ID = ?;
 ```
 
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
+```sql
+SELECT STU_ID, COURSE_ID, CTYPE_ID, POINTS, WEIGHTED_POINT 
+FROM RANKED_ENROLLMENT GROUP BY COURSE_ID = ? 
+ORDER BY WEIGHTED_POINT DESC, COURSE_TYPE.CTYPE_ID DESC, ENROLLMENT.POINTS DESC LIMIT ?;
+```
 
 ---
-layout: center
-class: text-center
----
 
-# Learn More
+Reference
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+Guofu Tan, "Auction Theory,” in *Research Frontier in Economics and Finance*, edited by Guoqiang Tian, 267-330, Commercial Affair Press, 2002.
+
+Undergraduate Education, P. U. (2021, June). *Regulations and Measures for the Management of Undergraduate Course Selection at Peking University - RULES*. Retrieved April 20, 2022, from http://www.dean.pku.edu.cn/web/rules\_info.php?id=17
