@@ -7,7 +7,7 @@ info: |
 drawings:
   persist: false
 layout: cover
-background: ./assets/loading.jpg
+background: loading.jpg
 ---
 
 <h1 class="pri-title"> Course Enrollment </h1>
@@ -215,20 +215,27 @@ ORDER BY WEIGHTED_POINT DESC, COURSE_TYPE.CTYPE_ID DESC, ENROLLMENT.POINTS DESC;
 SELECT STU_ID, COURSE_ID, CTYPE_ID, POINTS, WEIGHTED_POINT 
 FROM RANKED_ENROLLMENT WHERE COURSE_ID = ? LIMIT ?;
 ```
+
 ```sql
-DELETE FROM RANKED_ENROLLMENT WHERE STU_ID =? AND COURSE_ID = ?;
+DELETE FROM RANKED_ENROLLMENT WHERE STU_ID = ? AND COURSE_ID = ?;
 ```
 
 ```sql
 SELECT STU_ID, COURSE_ID, CTYPE_ID, POINTS, WEIGHTED_POINT 
-FROM RANKED_ENROLLMENT GROUP BY COURSE_ID = ? 
-ORDER BY WEIGHTED_POINT DESC, COURSE_TYPE.CTYPE_ID DESC, ENROLLMENT.POINTS DESC LIMIT ?;
+FROM RANKED_ENROLLMENT WHERE COURSE_ID = ? 
+ORDER BY WEIGHTED_POINT DESC, CTYPE_ID DESC, POINTS DESC LIMIT ?;
 ```
 
 ---
 
-Reference
+## Reference
 
 Guofu Tan, "Auction Theory,” in *Research Frontier in Economics and Finance*, edited by Guoqiang Tian, 267-330, Commercial Affair Press, 2002.
 
 Undergraduate Education, P. U. (2021, June). *Regulations and Measures for the Management of Undergraduate Course Selection at Peking University - RULES*. Retrieved April 20, 2022, from http://www.dean.pku.edu.cn/web/rules\_info.php?id=17
+
+## Contribution
+
+-  Siwei Zhang: 34%
+-  Song Chen: 33%
+-  Zefeng Song: 33%
