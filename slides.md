@@ -67,6 +67,16 @@ The current course registration model in CUHK(SZ) exists many problems.
 
 ---
 
+### Our auction system
+
+![auction-system](/road.svg)
+
+### Price calculation
+
+<img src="/price.svg" alt="price-calculation" style="zoom:50%; margin: auto; margin-top: -80px;" />
+
+---
+
 # Simple model
 
 We will show you a simplified model first.
@@ -93,9 +103,18 @@ variables p
 
 **Condition** - Assume that **25 students** will register **5 courses** with each **19 quota** (Not enough).
 
-**Restriction** - The **maximum number of course** allowed to register is **4** due to the restriction of credit unit.
+**Restriction** - The **maximum number of course** allowed to register is **4**$^1$ due to the restriction of credit unit.
 
 **Target** - And each students should try to **maximize the course number** that they need to successfully register.
+
+<p class="text-gray-500 text-xs">[1]: In fact, the restriction is 6 in CUHK(SZ), but for simplicity, we will use 4 here.</p>
+
+<style>
+.slidev-layout p {
+  margin-top: 0.7rem;
+  margin-bottom: 0.7rem;
+}
+</style>
 
 ---
 
